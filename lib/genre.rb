@@ -18,7 +18,7 @@ class Genre
 
   def artists
     songs.map {|song| song.artist }
-    songs.each { |song| song.genre  }
+    # songs.each { |song| song.genre  }
   end
 
 end
