@@ -7,19 +7,21 @@ class Artist
   def initialize(name)
     @name = name
     @@all << self
-  end
-
-  def new_song(song, genre)
-    Song.new(name, genre, self)
     @songs = []
-    @genres = []
+    @genres << song
   end
 
   # def new_song(song, genre)
-  #   @songs << song
-  #   @genres << song
-  #   song.artist = self
+  #   Song.new(name, genre, self)
+  #   @songs = []
+  #   @genres = []
   # end
+
+  def new_song(song, genre)
+    @songs << song
+    @genres << song
+    song.artist = self
+  end
 
   def songs
     Song.all.select {|song| song.artist == self}
