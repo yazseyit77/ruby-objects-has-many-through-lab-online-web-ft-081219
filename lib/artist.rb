@@ -32,7 +32,7 @@ class Artist
   end
 
   def genres
-    songs.map {|song| song.genre}
+    songs.collet {|song| song.genre}
   end
 
 end
